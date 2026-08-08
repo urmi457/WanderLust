@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: false;
+}
+@plugin "daisyui/theme" {
+  name: "wanderlust";
+  default: true;
+  color-scheme: light;
+
+  /* Core palette taken from the WanderLust mockups: deep navy + sky blue accent */
+  --color-base-100: #ffffff;
+  --color-base-200: #f5f7fb;
+  --color-base-300: #e7ebf3;
+  --color-base-content: #1c2434;
+
+  --color-primary: #1e3a8a;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #2f6fed;
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #38bdf8;
+  --color-accent-content: #052033;
+
+  --color-neutral: #0f2247;
+  --color-neutral-content: #cbd5f5;
+
+  --color-info: #38bdf8;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  --radius-box: 1rem;
+  --radius-field: 0.6rem;
+  --radius-selector: 0.5rem;
+}
+
+@theme {
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #1c2434;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 text-secondary font-semibold uppercase tracking-[0.2em] text-xs;
+}
+.eyebrow::before,
+.eyebrow::after {
+  content: "";
+  @apply h-[2px] w-6 bg-secondary/60;
+}
+.section-title {
+  @apply font-display text-3xl md:text-4xl font-bold text-primary mt-2;
+}
+.section-pad {
+  @apply py-16 md:py-24;
+}
+.btn-brand {
+  @apply btn bg-secondary text-secondary-content hover:bg-primary border-none rounded-full px-6;
+}
